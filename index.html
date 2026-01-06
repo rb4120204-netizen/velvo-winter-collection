@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvo - Winter Sale 20% OFF | Premium Clothing Brand</title>
-    <meta name="description" content="Velvo Premium Winter Collection 2026 - Get 20% OFF on all items. Shop for Men, Women, Kids & Seniors.">
+    <title>Velvo - Republic Day Sale 30% OFF | Premium Clothing Brand</title>
+    <meta name="description" content="Velvo Premium Winter Collection 2026 - Republic Day Special 30% OFF from Jan 26. Shop for Men, Women, Kids & Seniors.">
     <style>
         * {
             margin: 0;
@@ -83,17 +83,17 @@
         
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
+            color: #1a1a1a;
             padding: 100px 20px 50px;
         }
         
         .sale-badge {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
             color: #1a1a1a;
             padding: 12px 35px;
             border-radius: 50px;
@@ -102,6 +102,7 @@
             display: inline-block;
             margin-bottom: 25px;
             animation: pulse 2s infinite;
+            border: 3px solid #1a1a1a;
         }
         
         @keyframes pulse {
@@ -113,25 +114,36 @@
             font-size: 4rem;
             margin: 1rem 0;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .discount {
             font-size: 6rem;
-            color: #d4af37;
+            color: #dc143c;
             font-weight: 700;
             margin: 20px 0;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            text-shadow: 0 0 30px rgba(220, 20, 60, 0.6);
         }
         
         .hero p {
             font-size: 1.4rem;
             margin-bottom: 2.5rem;
-            color: #e0e0e0;
+            font-weight: 600;
+        }
+        
+        .republic-day-note {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #FF9933;
+            font-weight: 600;
+            color: #138808;
         }
         
         .btn {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #FF9933 0%, #138808 100%);
+            color: #fff;
             padding: 18px 45px;
             text-decoration: none;
             border-radius: 50px;
@@ -139,14 +151,14 @@
             font-size: 1.2rem;
             display: inline-block;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 153, 51, 0.4);
             border: none;
             cursor: pointer;
         }
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 30px rgba(255, 153, 51, 0.6);
         }
         
         .btn-cart {
@@ -162,10 +174,12 @@
         }
         
         .sale-banner {
-            background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
-            color: #fff;
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+            color: #1a1a1a;
             padding: 35px 20px;
             text-align: center;
+            border-top: 3px solid #1a1a1a;
+            border-bottom: 3px solid #1a1a1a;
         }
         
         .sale-banner h2 {
@@ -198,7 +212,7 @@
         }
         
         .category-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #FF9933 0%, #138808 100%);
             color: #fff;
             padding: 20px 30px;
             border-radius: 15px;
@@ -243,14 +257,14 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: #dc143c;
+            background: linear-gradient(135deg, #FF9933 0%, #138808 100%);
             color: #fff;
             padding: 10px 20px;
             border-radius: 30px;
             font-weight: 700;
             font-size: 1rem;
             z-index: 10;
-            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
+            box-shadow: 0 4px 15px rgba(255, 153, 51, 0.5);
         }
         
         .card img {
@@ -298,6 +312,27 @@
             margin-top: auto;
         }
         
+        .color-variants {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .color-dot {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .color-dot:hover {
+            transform: scale(1.2);
+            border-color: #FF9933;
+        }
+        
         .franchise {
             padding: 100px 20px;
             text-align: center;
@@ -325,7 +360,7 @@
         .franchise p {
             font-size: 1.5rem;
             margin: 2rem 0;
-            color: #d4af37;
+            color: #FF9933;
             font-weight: 600;
         }
         
@@ -342,7 +377,7 @@
             background: #f8f9fa;
             padding: 25px;
             border-radius: 15px;
-            border-left: 4px solid #d4af37;
+            border-left: 4px solid #FF9933;
         }
         
         .feature h4 {
@@ -364,7 +399,7 @@
         }
         
         footer a {
-            color: #d4af37;
+            color: #FF9933;
             text-decoration: none;
         }
         
@@ -391,7 +426,7 @@
         }
         
         .modal-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #FF9933 0%, #138808 100%);
             color: #fff;
             padding: 25px 30px;
             border-radius: 20px 20px 0 0;
@@ -409,7 +444,7 @@
         }
         
         .close:hover {
-            color: #d4af37;
+            color: #1a1a1a;
         }
         
         .modal-body {
@@ -525,7 +560,7 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #d4af37;
+            border-color: #FF9933;
         }
         
         .payment-options {
@@ -546,12 +581,12 @@
         }
         
         .payment-option:hover {
-            border-color: #d4af37;
+            border-color: #FF9933;
             background: #f8f9fa;
         }
         
         .payment-option.selected {
-            border-color: #d4af37;
+            border-color: #FF9933;
             background: #fff9e6;
         }
         
@@ -694,21 +729,24 @@
 
     <section id="home" class="hero">
         <div>
-            <div class="sale-badge">🎉 WINTER SALE 🎉</div>
+            <div class="sale-badge">🇮🇳 REPUBLIC DAY SPECIAL 🇮🇳</div>
             <h1>Premium Winter Collection</h1>
-            <h2 class="discount">20% OFF</h2>
+            <h2 class="discount">30% OFF</h2>
             <p>Shop for Everyone - Men, Women, Kids & Seniors</p>
+            <div class="republic-day-note">
+                🎉 Extra 10% OFF from 26th January - Republic Day Special! 🎉
+            </div>
             <a href="#mens" class="btn">Shop Now</a>
         </div>
     </section>
 
     <section class="sale-banner">
-        <h2>❄️ WINTER SALE - 20% OFF ALL ITEMS ❄️</h2>
+        <h2>🇮🇳 REPUBLIC DAY SALE - 30% OFF FROM 26TH JANUARY 🇮🇳</h2>
     </section>
 
     <section class="products">
         <h2>Winter Collection 2026</h2>
-        <p class="subtitle">Premium Quality Clothing for Everyone</p>
+        <p class="subtitle">Premium Quality Clothing - Republic Day Special 30% OFF</p>
         
         <!-- Men's Collection -->
         <div id="mens" class="category-section">
@@ -785,7 +823,7 @@
         <p style="margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">© 2026 Velvo Fashion Pvt. Ltd. All rights reserved.</p>
     </footer>
 
-    <!-- Cart Modal -->
+    <!-- Cart & Checkout Modals (same as before) -->
     <div id="cartModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -797,7 +835,6 @@
         </div>
     </div>
 
-    <!-- Checkout Modal -->
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -887,38 +924,35 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+        // Check if Republic Day offer is active (from Jan 26)
+        const republicDayStart = new Date('2026-01-26');
+        const today = new Date();
+        const isRepublicDayOffer = today >= republicDayStart;
+        const discountPercent = isRepublicDayOffer ? 30 : 20;
+
         const products = {
             mens: [
                 {
                     id: 1,
-                    name: "Premium Navy Hoodie",
+                    name: "Premium Hoodie Collection",
                     category: "Men's Collection",
                     oldPrice: 2499,
-                    newPrice: 1999,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-02-42-598Z-a397b3ae-nano-banana-pro_1767682962439.jpg"
-                },
-                {
-                    id: 11,
-                    name: "Classic Black Hoodie",
-                    category: "Men's Collection",
-                    oldPrice: 2499,
-                    newPrice: 1999,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-52-54-920Z-48d03951-nano-banana-pro_1767711174550.jpg"
-                },
-                {
-                    id: 12,
-                    name: "Urban Grey Hoodie",
-                    category: "Men's Collection",
-                    oldPrice: 2499,
-                    newPrice: 1999,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-18-316Z-d2fd28a5-nano-banana-pro_1767711197929.png"
+                    newPrice: isRepublicDayOffer ? 1749 : 1999,
+                    colors: [
+                        {name: "Navy", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-02-42-598Z-a397b3ae-nano-banana-pro_1767682962439.jpg", hex: "#1e3a8a"},
+                        {name: "Black", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-52-54-920Z-48d03951-nano-banana-pro_1767711174550.jpg", hex: "#000000"},
+                        {name: "Grey", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-18-316Z-d2fd28a5-nano-banana-pro_1767711197929.png", hex: "#6b7280"},
+                        {name: "Maroon", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-16-50-029Z-5843f133-nano-banana-pro_1767712609824.png", hex: "#7f1d1d"},
+                        {name: "Olive", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-17-07-895Z-d30a9821-nano-banana-pro_1767712627540.jpg", hex: "#65a30d"},
+                        {name: "White", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-17-29-497Z-cd8cb382-nano-banana-pro_1767712649345.png", hex: "#ffffff"}
+                    ]
                 },
                 {
                     id: 13,
                     name: "Leather Winter Jacket",
                     category: "Men's Collection",
                     oldPrice: 4999,
-                    newPrice: 3999,
+                    newPrice: isRepublicDayOffer ? 3499 : 3999,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-37-352Z-f87ceb45-nano-banana-pro_1767711217188.jpg"
                 },
                 {
@@ -926,7 +960,7 @@
                     name: "Olive Bomber Jacket",
                     category: "Men's Collection",
                     oldPrice: 3999,
-                    newPrice: 3199,
+                    newPrice: isRepublicDayOffer ? 2799 : 3199,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-59-305Z-b7fdcb91-nano-banana-pro_1767711239130.png"
                 },
                 {
@@ -934,7 +968,7 @@
                     name: "Wool Muffler",
                     category: "Men's Accessories",
                     oldPrice: 1299,
-                    newPrice: 1039,
+                    newPrice: isRepublicDayOffer ? 909 : 1039,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-10-063Z-0bfa0376-nano-banana-pro_1767683049924.jpg"
                 },
                 {
@@ -942,57 +976,66 @@
                     name: "Premium Cap",
                     category: "Men's Accessories",
                     oldPrice: 799,
-                    newPrice: 639,
+                    newPrice: isRepublicDayOffer ? 559 : 639,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-53-043Z-52953e70-nano-banana-pro_1767683032856.png"
                 }
             ],
             womens: [
                 {
                     id: 2,
-                    name: "Elegant Burgundy Jacket",
+                    name: "Elegant Jacket Collection",
                     category: "Women's Collection",
                     oldPrice: 3999,
-                    newPrice: 3199,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-05-481Z-425445ab-nano-banana-pro_1767682985093.jpg"
+                    newPrice: isRepublicDayOffer ? 2799 : 3199,
+                    colors: [
+                        {name: "Burgundy", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-05-481Z-425445ab-nano-banana-pro_1767682985093.jpg", hex: "#7f1d1d"},
+                        {name: "Emerald", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-17-50-503Z-7b0a23d5-nano-banana-pro_1767712670287.png", hex: "#047857"}
+                    ]
                 },
                 {
                     id: 15,
                     name: "Pink Hoodie",
                     category: "Women's Collection",
                     oldPrice: 2499,
-                    newPrice: 1999,
+                    newPrice: isRepublicDayOffer ? 1749 : 1999,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-54-19-959Z-3a2aa198-nano-banana-pro_1767711259789.jpg"
                 },
                 {
                     id: 16,
-                    name: "Beige Long Coat",
+                    name: "Long Coat Collection",
                     category: "Women's Collection",
                     oldPrice: 5999,
-                    newPrice: 4799,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-54-44-531Z-cbdcfe14-nano-banana-pro_1767711284356.png"
+                    newPrice: isRepublicDayOffer ? 4199 : 4799,
+                    colors: [
+                        {name: "Beige", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-54-44-531Z-cbdcfe14-nano-banana-pro_1767711284356.png", hex: "#d4a574"},
+                        {name: "Navy", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-18-13-491Z-6182ccbf-nano-banana-pro_1767712693316.png", hex: "#1e3a8a"}
+                    ]
                 },
                 {
                     id: 17,
                     name: "White Puffer Jacket",
                     category: "Women's Collection",
                     oldPrice: 3999,
-                    newPrice: 3199,
+                    newPrice: isRepublicDayOffer ? 2799 : 3199,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-01-972Z-a06c00ce-nano-banana-pro_1767711301586.jpg"
                 },
                 {
                     id: 18,
-                    name: "Burgundy Cardigan",
+                    name: "Cardigan Collection",
                     category: "Women's Collection",
                     oldPrice: 2499,
-                    newPrice: 1999,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-20-130Z-ff5cf463-nano-banana-pro_1767711319854.jpg"
+                    newPrice: isRepublicDayOffer ? 1749 : 1999,
+                    colors: [
+                        {name: "Burgundy", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-20-130Z-ff5cf463-nano-banana-pro_1767711319854.jpg", hex: "#7f1d1d"},
+                        {name: "Mustard", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-18-35-479Z-3468de5d-nano-banana-pro_1767712715262.png", hex: "#eab308"}
+                    ]
                 },
                 {
                     id: 10,
                     name: "Elegant Scarf",
                     category: "Women's Accessories",
                     oldPrice: 1799,
-                    newPrice: 1439,
+                    newPrice: isRepublicDayOffer ? 1259 : 1439,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-45-459Z-8f5a7919-nano-banana-pro_1767683145224.jpg"
                 },
                 {
@@ -1000,60 +1043,72 @@
                     name: "Premium Socks",
                     category: "Accessories",
                     oldPrice: 499,
-                    newPrice: 399,
+                    newPrice: isRepublicDayOffer ? 349 : 399,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-29-346Z-e31497dd-nano-banana-pro_1767683069169.png"
                 }
             ],
             kids: [
                 {
                     id: 3,
-                    name: "Kids Tracksuit",
+                    name: "Kids Tracksuit Collection",
                     category: "Kids Collection",
                     oldPrice: 1799,
-                    newPrice: 1439,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-31-495Z-831b5679-nano-banana-pro_1767683011125.png"
+                    newPrice: isRepublicDayOffer ? 1259 : 1439,
+                    colors: [
+                        {name: "Blue", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-31-495Z-831b5679-nano-banana-pro_1767683011125.png", hex: "#2563eb"},
+                        {name: "Purple", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-19-33-346Z-70252fb9-nano-banana-pro_1767712773056.jpg", hex: "#7c3aed"}
+                    ]
                 },
                 {
                     id: 19,
-                    name: "Blue Hoodie",
+                    name: "Kids Hoodie Collection",
                     category: "Kids Collection",
                     oldPrice: 1799,
-                    newPrice: 1439,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-43-209Z-79dfaf7c-nano-banana-pro_1767711343015.png"
+                    newPrice: isRepublicDayOffer ? 1259 : 1439,
+                    colors: [
+                        {name: "Blue", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-43-209Z-79dfaf7c-nano-banana-pro_1767711343015.png", hex: "#2563eb"},
+                        {name: "Red", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-18-55-999Z-baf83c9d-nano-banana-pro_1767712735625.png", hex: "#dc2626"}
+                    ]
                 },
                 {
                     id: 20,
-                    name: "Orange Winter Jacket",
+                    name: "Kids Winter Jacket Collection",
                     category: "Kids Collection",
                     oldPrice: 2299,
-                    newPrice: 1839,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-56-07-439Z-d92b34cc-nano-banana-pro_1767711367243.png"
+                    newPrice: isRepublicDayOffer ? 1609 : 1839,
+                    colors: [
+                        {name: "Orange", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-56-07-439Z-d92b34cc-nano-banana-pro_1767711367243.png", hex: "#ea580c"},
+                        {name: "Green", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-19-12-487Z-087557c4-nano-banana-pro_1767712752327.jpg", hex: "#16a34a"}
+                    ]
                 },
                 {
                     id: 7,
                     name: "Teen Girls Puffer Jacket",
                     category: "Girls Collection",
                     oldPrice: 2999,
-                    newPrice: 2399,
+                    newPrice: isRepublicDayOffer ? 2099 : 2399,
                     image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-46-587Z-5d40b766-nano-banana-pro_1767683086235.jpg"
                 }
             ],
             seniors: [
                 {
                     id: 8,
-                    name: "Premium Knit Sweater",
-                    category: "Senior Women's Collection",
+                    name: "Premium Knit Sweater Collection",
+                    category: "Senior Collection",
                     oldPrice: 2499,
-                    newPrice: 1999,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-04-127Z-339f1fd3-nano-banana-pro_1767683103956.jpg"
+                    newPrice: isRepublicDayOffer ? 1749 : 1999,
+                    colors: [
+                        {name: "Beige", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-04-127Z-339f1fd3-nano-banana-pro_1767683103956.jpg", hex: "#d4a574"},
+                        {name: "Charcoal", image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T15-19-57-292Z-61e6ce59-nano-banana-pro_1767712796874.png", hex: "#374151"}
+                    ]
                 },
                 {
                     id: 9,
                     name: "Classic Wool Muffler",
                     category: "Senior Men's Collection",
                     oldPrice: 1499,
-                    newPrice: 1199,
-                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-29-272Z-b9e493e6-nano-banana-pro_1767711129089.png"
+                    newPrice: isRepublicDayOffer ? 1049 : 1199,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-29-272Z-b9e493e6-nano-banana-pro_1767683129089.png"
                 }
             ]
         };
@@ -1061,31 +1116,37 @@
         let cart = JSON.parse(localStorage.getItem('velvoCart')) || [];
 
         function renderProducts() {
-            // Render Men's Products
-            const mensGrid = document.getElementById('mensGrid');
-            mensGrid.innerHTML = products.mens.map(product => createProductCard(product)).join('');
+            renderCategoryProducts('mens', products.mens);
+            renderCategoryProducts('womens', products.womens);
+            renderCategoryProducts('kids', products.kids);
+            renderCategoryProducts('seniors', products.seniors);
+        }
 
-            // Render Women's Products
-            const womensGrid = document.getElementById('womensGrid');
-            womensGrid.innerHTML = products.womens.map(product => createProductCard(product)).join('');
-
-            // Render Kids Products
-            const kidsGrid = document.getElementById('kidsGrid');
-            kidsGrid.innerHTML = products.kids.map(product => createProductCard(product)).join('');
-
-            // Render Seniors Products
-            const seniorsGrid = document.getElementById('seniorsGrid');
-            seniorsGrid.innerHTML = products.seniors.map(product => createProductCard(product)).join('');
+        function renderCategoryProducts(category, productList) {
+            const grid = document.getElementById(category + 'Grid');
+            grid.innerHTML = productList.map(product => createProductCard(product)).join('');
         }
 
         function createProductCard(product) {
+            const mainImage = product.colors ? product.colors[0].image : product.image;
+            const colorVariants = product.colors ? `
+                <div class="color-variants">
+                    ${product.colors.map(color => `
+                        <div class="color-dot" style="background-color: ${color.hex}; ${color.hex === '#ffffff' ? 'border-color: #ccc;' : ''}" 
+                             title="${color.name}" 
+                             onclick="changeProductImage(${product.id}, '${color.image}')"></div>
+                    `).join('')}
+                </div>
+            ` : '';
+            
             return `
                 <div class="card">
-                    <span class="tag">20% OFF</span>
-                    <img src="${product.image}" alt="${product.name}">
+                    <span class="tag">${discountPercent}% OFF</span>
+                    <img src="${mainImage}" alt="${product.name}" id="img-${product.id}">
                     <div class="card-content">
                         <h4>${product.name}</h4>
                         <p class="category">${product.category}</p>
+                        ${colorVariants}
                         <p class="price"><s>₹${product.oldPrice}</s> <b>₹${product.newPrice}</b></p>
                         <div class="card-actions">
                             <button class="btn btn-cart" onclick="addToCart(${product.id})">Add to Cart 🛒</button>
@@ -1093,6 +1154,13 @@
                     </div>
                 </div>
             `;
+        }
+
+        function changeProductImage(productId, imageUrl) {
+            const imgElement = document.getElementById('img-' + productId);
+            if (imgElement) {
+                imgElement.src = imageUrl;
+            }
         }
 
         function getAllProducts() {
@@ -1107,7 +1175,12 @@
             if (existingItem) {
                 existingItem.quantity++;
             } else {
-                cart.push({...product, quantity: 1});
+                const cartProduct = {...product};
+                if (cartProduct.colors) {
+                    cartProduct.image = cartProduct.colors[0].image;
+                    delete cartProduct.colors;
+                }
+                cart.push({...cartProduct, quantity: 1});
             }
             
             saveCart();
@@ -1205,7 +1278,7 @@
                     <span>FREE</span>
                 </div>
                 <div class="order-summary-item">
-                    <span>Total</span>
+                    <span>Total (${discountPercent}% OFF Applied)</span>
                     <span>₹${total}</span>
                 </div>
             `;
@@ -1233,8 +1306,9 @@
             const orderId = 'VELVO' + Date.now();
             
             const orderDetails = `
-                <h2>🎉 New Order - Velvo Winter Collection</h2>
+                <h2>🇮🇳 New Order - Velvo Republic Day Sale</h2>
                 <p><strong>Order ID:</strong> ${orderId}</p>
+                <p><strong>Discount Applied:</strong> ${discountPercent}% OFF</p>
                 <hr>
                 <h3>Customer Details:</h3>
                 <p><strong>Name:</strong> ${customerName}</p>
@@ -1259,11 +1333,11 @@
             if (paymentMethod === 'online') {
                 showNotification('Redirecting to PhonePe... 💳');
                 setTimeout(() => {
-                    alert(`🔒 PhonePe Payment\n\nOrder: ${orderId}\nAmount: ₹${total}\n\n[Redirecting to PhonePe gateway...]`);
+                    alert(`🔒 PhonePe Payment\n\nOrder: ${orderId}\nAmount: ₹${total}\nDiscount: ${discountPercent}% OFF\n\n[Redirecting to PhonePe gateway...]`);
                     completeOrder(orderId, customerEmail, orderDetails);
                 }, 1500);
             } else {
-                alert(`✅ Order Placed!\n\nOrder ID: ${orderId}\nCOD: ₹${total}\n\nPay on delivery!`);
+                alert(`✅ Order Placed!\n\nOrder ID: ${orderId}\nCOD: ₹${total}\nDiscount: ${discountPercent}% OFF\n\nPay on delivery!`);
                 completeOrder(orderId, customerEmail, orderDetails);
             }
         });
@@ -1274,7 +1348,7 @@
                     SecureToken: "YOUR_SMTP_TOKEN",
                     To: 'rb4120204@gmail.com',
                     From: 'orders@velvo.in',
-                    Subject: `New Order ${orderId}`,
+                    Subject: `New Order ${orderId} - Republic Day Sale`,
                     Body: orderDetails
                 });
             } catch (error) {
