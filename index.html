@@ -29,7 +29,7 @@
         }
         
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -154,6 +154,7 @@
             color: #fff;
             padding: 12px 25px;
             font-size: 1rem;
+            width: 100%;
         }
         
         .btn-cart:hover {
@@ -173,7 +174,7 @@
         }
         
         .products {
-            padding: 100px 20px;
+            padding: 80px 20px;
             background: #f8f9fa;
         }
         
@@ -188,15 +189,38 @@
             text-align: center;
             font-size: 1.3rem;
             color: #666;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-section {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .category-header h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
         }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
         }
         
         .card {
@@ -206,6 +230,8 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             transition: all 0.4s;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         
         .card:hover {
@@ -229,33 +255,39 @@
         
         .card img {
             width: 100%;
-            height: 380px;
+            height: 350px;
             object-fit: cover;
         }
         
-        .card h3 {
-            padding: 25px 25px 10px;
-            font-size: 1.4rem;
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
             color: #1a1a1a;
         }
         
         .category {
-            padding: 0 25px;
             color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
         }
         
         .price {
-            padding: 0 25px 15px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
+            margin-bottom: 15px;
         }
         
         .price s {
             color: #999;
-            margin-right: 12px;
-            font-size: 1.1rem;
+            margin-right: 10px;
+            font-size: 1rem;
         }
         
         .price b {
@@ -263,7 +295,7 @@
         }
         
         .card-actions {
-            padding: 0 25px 25px;
+            margin-top: auto;
         }
         
         .franchise {
@@ -614,6 +646,10 @@
                 font-size: 2.5rem;
             }
             
+            .category-header h3 {
+                font-size: 1.5rem;
+            }
+            
             nav ul {
                 gap: 1rem;
                 font-size: 0.9rem;
@@ -641,9 +677,11 @@
             <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T06-50-31-224Z-727dc112-chat-image-1767682231204-0.jpg" alt="Velvo Logo" class="logo">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#mens">Men's</a></li>
+                <li><a href="#womens">Women's</a></li>
+                <li><a href="#kids">Kids</a></li>
+                <li><a href="#seniors">Seniors</a></li>
                 <li><a href="#franchise">Franchise</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li>
                     <div class="cart-icon" onclick="openCart()">
                         🛒
@@ -660,7 +698,7 @@
             <h1>Premium Winter Collection</h1>
             <h2 class="discount">20% OFF</h2>
             <p>Shop for Everyone - Men, Women, Kids & Seniors</p>
-            <a href="#products" class="btn">Shop Now</a>
+            <a href="#mens" class="btn">Shop Now</a>
         </div>
     </section>
 
@@ -668,11 +706,45 @@
         <h2>❄️ WINTER SALE - 20% OFF ALL ITEMS ❄️</h2>
     </section>
 
-    <section id="products" class="products">
+    <section class="products">
         <h2>Winter Collection 2026</h2>
         <p class="subtitle">Premium Quality Clothing for Everyone</p>
         
-        <div class="grid" id="productsGrid"></div>
+        <!-- Men's Collection -->
+        <div id="mens" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">👔</span>
+                <h3>Men's Collection</h3>
+            </div>
+            <div class="grid" id="mensGrid"></div>
+        </div>
+
+        <!-- Women's Collection -->
+        <div id="womens" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">👗</span>
+                <h3>Women's Collection</h3>
+            </div>
+            <div class="grid" id="womensGrid"></div>
+        </div>
+
+        <!-- Kids Collection -->
+        <div id="kids" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">🧒</span>
+                <h3>Kids Collection</h3>
+            </div>
+            <div class="grid" id="kidsGrid"></div>
+        </div>
+
+        <!-- Seniors Collection -->
+        <div id="seniors" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">👴</span>
+                <h3>Seniors Collection</h3>
+            </div>
+            <div class="grid" id="seniorsGrid"></div>
+        </div>
     </section>
 
     <section id="franchise" class="franchise">
@@ -815,110 +887,221 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        const products = [
-            {
-                id: 1,
-                name: "Premium Men's Hoodie",
-                category: "Men's Collection",
-                oldPrice: 2499,
-                newPrice: 1999,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-02-42-598Z-a397b3ae-nano-banana-pro_1767682962439.jpg"
-            },
-            {
-                id: 2,
-                name: "Elegant Women's Jacket",
-                category: "Women's Collection",
-                oldPrice: 3999,
-                newPrice: 3199,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-05-481Z-425445ab-nano-banana-pro_1767682985093.jpg"
-            },
-            {
-                id: 3,
-                name: "Kids' Tracksuit",
-                category: "Kids Collection",
-                oldPrice: 1799,
-                newPrice: 1439,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-31-495Z-831b5679-nano-banana-pro_1767683011125.png"
-            },
-            {
-                id: 4,
-                name: "Premium Cap",
-                category: "Accessories",
-                oldPrice: 799,
-                newPrice: 639,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-53-043Z-52953e70-nano-banana-pro_1767683032856.png"
-            },
-            {
-                id: 5,
-                name: "Men's Wool Muffler",
-                category: "Men's Accessories",
-                oldPrice: 1299,
-                newPrice: 1039,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-10-063Z-0bfa0376-nano-banana-pro_1767683049924.jpg"
-            },
-            {
-                id: 6,
-                name: "Premium Socks Collection",
-                category: "Accessories",
-                oldPrice: 499,
-                newPrice: 399,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-29-346Z-e31497dd-nano-banana-pro_1767683069169.png"
-            },
-            {
-                id: 7,
-                name: "Teen Girls' Puffer Jacket",
-                category: "Girls Collection",
-                oldPrice: 2999,
-                newPrice: 2399,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-46-587Z-5d40b766-nano-banana-pro_1767683086235.jpg"
-            },
-            {
-                id: 8,
-                name: "Premium Knit Sweater",
-                category: "Senior Women's Collection",
-                oldPrice: 2499,
-                newPrice: 1999,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-04-127Z-339f1fd3-nano-banana-pro_1767683103956.jpg"
-            },
-            {
-                id: 9,
-                name: "Classic Wool Muffler",
-                category: "Senior Men's Collection",
-                oldPrice: 1499,
-                newPrice: 1199,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-29-272Z-b9e493e6-nano-banana-pro_1767683129089.png"
-            },
-            {
-                id: 10,
-                name: "Elegant Women's Scarf",
-                category: "Women's Accessories",
-                oldPrice: 1799,
-                newPrice: 1439,
-                image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-45-459Z-8f5a7919-nano-banana-pro_1767683145224.jpg"
-            }
-        ];
+        const products = {
+            mens: [
+                {
+                    id: 1,
+                    name: "Premium Navy Hoodie",
+                    category: "Men's Collection",
+                    oldPrice: 2499,
+                    newPrice: 1999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-02-42-598Z-a397b3ae-nano-banana-pro_1767682962439.jpg"
+                },
+                {
+                    id: 11,
+                    name: "Classic Black Hoodie",
+                    category: "Men's Collection",
+                    oldPrice: 2499,
+                    newPrice: 1999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-52-54-920Z-48d03951-nano-banana-pro_1767711174550.jpg"
+                },
+                {
+                    id: 12,
+                    name: "Urban Grey Hoodie",
+                    category: "Men's Collection",
+                    oldPrice: 2499,
+                    newPrice: 1999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-18-316Z-d2fd28a5-nano-banana-pro_1767711197929.png"
+                },
+                {
+                    id: 13,
+                    name: "Leather Winter Jacket",
+                    category: "Men's Collection",
+                    oldPrice: 4999,
+                    newPrice: 3999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-37-352Z-f87ceb45-nano-banana-pro_1767711217188.jpg"
+                },
+                {
+                    id: 14,
+                    name: "Olive Bomber Jacket",
+                    category: "Men's Collection",
+                    oldPrice: 3999,
+                    newPrice: 3199,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-53-59-305Z-b7fdcb91-nano-banana-pro_1767711239130.png"
+                },
+                {
+                    id: 5,
+                    name: "Wool Muffler",
+                    category: "Men's Accessories",
+                    oldPrice: 1299,
+                    newPrice: 1039,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-10-063Z-0bfa0376-nano-banana-pro_1767683049924.jpg"
+                },
+                {
+                    id: 4,
+                    name: "Premium Cap",
+                    category: "Men's Accessories",
+                    oldPrice: 799,
+                    newPrice: 639,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-53-043Z-52953e70-nano-banana-pro_1767683032856.png"
+                }
+            ],
+            womens: [
+                {
+                    id: 2,
+                    name: "Elegant Burgundy Jacket",
+                    category: "Women's Collection",
+                    oldPrice: 3999,
+                    newPrice: 3199,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-05-481Z-425445ab-nano-banana-pro_1767682985093.jpg"
+                },
+                {
+                    id: 15,
+                    name: "Pink Hoodie",
+                    category: "Women's Collection",
+                    oldPrice: 2499,
+                    newPrice: 1999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-54-19-959Z-3a2aa198-nano-banana-pro_1767711259789.jpg"
+                },
+                {
+                    id: 16,
+                    name: "Beige Long Coat",
+                    category: "Women's Collection",
+                    oldPrice: 5999,
+                    newPrice: 4799,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-54-44-531Z-cbdcfe14-nano-banana-pro_1767711284356.png"
+                },
+                {
+                    id: 17,
+                    name: "White Puffer Jacket",
+                    category: "Women's Collection",
+                    oldPrice: 3999,
+                    newPrice: 3199,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-01-972Z-a06c00ce-nano-banana-pro_1767711301586.jpg"
+                },
+                {
+                    id: 18,
+                    name: "Burgundy Cardigan",
+                    category: "Women's Collection",
+                    oldPrice: 2499,
+                    newPrice: 1999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-20-130Z-ff5cf463-nano-banana-pro_1767711319854.jpg"
+                },
+                {
+                    id: 10,
+                    name: "Elegant Scarf",
+                    category: "Women's Accessories",
+                    oldPrice: 1799,
+                    newPrice: 1439,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-45-459Z-8f5a7919-nano-banana-pro_1767683145224.jpg"
+                },
+                {
+                    id: 6,
+                    name: "Premium Socks",
+                    category: "Accessories",
+                    oldPrice: 499,
+                    newPrice: 399,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-29-346Z-e31497dd-nano-banana-pro_1767683069169.png"
+                }
+            ],
+            kids: [
+                {
+                    id: 3,
+                    name: "Kids Tracksuit",
+                    category: "Kids Collection",
+                    oldPrice: 1799,
+                    newPrice: 1439,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-31-495Z-831b5679-nano-banana-pro_1767683011125.png"
+                },
+                {
+                    id: 19,
+                    name: "Blue Hoodie",
+                    category: "Kids Collection",
+                    oldPrice: 1799,
+                    newPrice: 1439,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-55-43-209Z-79dfaf7c-nano-banana-pro_1767711343015.png"
+                },
+                {
+                    id: 20,
+                    name: "Orange Winter Jacket",
+                    category: "Kids Collection",
+                    oldPrice: 2299,
+                    newPrice: 1839,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T14-56-07-439Z-d92b34cc-nano-banana-pro_1767711367243.png"
+                },
+                {
+                    id: 7,
+                    name: "Teen Girls Puffer Jacket",
+                    category: "Girls Collection",
+                    oldPrice: 2999,
+                    newPrice: 2399,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-46-587Z-5d40b766-nano-banana-pro_1767683086235.jpg"
+                }
+            ],
+            seniors: [
+                {
+                    id: 8,
+                    name: "Premium Knit Sweater",
+                    category: "Senior Women's Collection",
+                    oldPrice: 2499,
+                    newPrice: 1999,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-04-127Z-339f1fd3-nano-banana-pro_1767683103956.jpg"
+                },
+                {
+                    id: 9,
+                    name: "Classic Wool Muffler",
+                    category: "Senior Men's Collection",
+                    oldPrice: 1499,
+                    newPrice: 1199,
+                    image: "https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-29-272Z-b9e493e6-nano-banana-pro_1767711129089.png"
+                }
+            ]
+        };
 
         let cart = JSON.parse(localStorage.getItem('velvoCart')) || [];
-        let selectedPaymentMethod = '';
 
         function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = products.map(product => `
+            // Render Men's Products
+            const mensGrid = document.getElementById('mensGrid');
+            mensGrid.innerHTML = products.mens.map(product => createProductCard(product)).join('');
+
+            // Render Women's Products
+            const womensGrid = document.getElementById('womensGrid');
+            womensGrid.innerHTML = products.womens.map(product => createProductCard(product)).join('');
+
+            // Render Kids Products
+            const kidsGrid = document.getElementById('kidsGrid');
+            kidsGrid.innerHTML = products.kids.map(product => createProductCard(product)).join('');
+
+            // Render Seniors Products
+            const seniorsGrid = document.getElementById('seniorsGrid');
+            seniorsGrid.innerHTML = products.seniors.map(product => createProductCard(product)).join('');
+        }
+
+        function createProductCard(product) {
+            return `
                 <div class="card">
                     <span class="tag">20% OFF</span>
                     <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p class="category">${product.category}</p>
-                    <p class="price"><s>₹${product.oldPrice}</s> <b>₹${product.newPrice}</b></p>
-                    <div class="card-actions">
-                        <button class="btn btn-cart" onclick="addToCart(${product.id})">Add to Cart 🛒</button>
+                    <div class="card-content">
+                        <h4>${product.name}</h4>
+                        <p class="category">${product.category}</p>
+                        <p class="price"><s>₹${product.oldPrice}</s> <b>₹${product.newPrice}</b></p>
+                        <div class="card-actions">
+                            <button class="btn btn-cart" onclick="addToCart(${product.id})">Add to Cart 🛒</button>
+                        </div>
                     </div>
                 </div>
-            `).join('');
+            `;
+        }
+
+        function getAllProducts() {
+            return [...products.mens, ...products.womens, ...products.kids, ...products.seniors];
         }
 
         function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
+            const allProducts = getAllProducts();
+            const product = allProducts.find(p => p.id === productId);
             const existingItem = cart.find(item => item.id === productId);
             
             if (existingItem) {
@@ -1029,7 +1212,6 @@
         }
 
         function selectPayment(method) {
-            selectedPaymentMethod = method;
             document.querySelectorAll('.payment-option').forEach(opt => {
                 opt.classList.remove('selected');
             });
@@ -1048,13 +1230,10 @@
             const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
             
             const total = cart.reduce((sum, item) => sum + (item.newPrice * item.quantity), 0);
-            
-            // Generate unique order ID
             const orderId = 'VELVO' + Date.now();
             
-            // Send order notification email
             const orderDetails = `
-                <h2>🎉 New Order Received - Velvo Winter Collection</h2>
+                <h2>🎉 New Order - Velvo Winter Collection</h2>
                 <p><strong>Order ID:</strong> ${orderId}</p>
                 <hr>
                 <h3>Customer Details:</h3>
@@ -1068,57 +1247,45 @@
                     <p>• ${item.name} (${item.category}) - ₹${item.newPrice} × ${item.quantity} = ₹${item.newPrice * item.quantity}</p>
                 `).join('')}
                 <hr>
-                <h3>Payment Details:</h3>
-                <p><strong>Payment Method:</strong> ${paymentMethod === 'online' ? 'Online Payment (PhonePe Gateway)' : 'Cash on Delivery'}</p>
-                <p><strong>Total Amount:</strong> ₹${total}</p>
-                <p><strong>Payment Status:</strong> ${paymentMethod === 'online' ? 'Processing...' : 'COD - Pending'}</p>
+                <h3>Payment:</h3>
+                <p><strong>Method:</strong> ${paymentMethod === 'online' ? 'Online (PhonePe)' : 'COD'}</p>
+                <p><strong>Total:</strong> ₹${total}</p>
                 <hr>
-                <h3>Delivery Information:</h3>
-                <p>📦 Courier: Delhivery / Blue Dart / DTDC</p>
-                <p>⏱️ Estimated Delivery: 3-7 Business Days</p>
-                <hr>
-                <p style="color: #dc143c;"><strong>Action Required:</strong> Please arrange dispatch and courier booking.</p>
-                <p><strong>Order Date:</strong> ${new Date().toLocaleString()}</p>
+                <p>📦 Courier: Delhivery/Blue Dart/DTDC</p>
+                <p>⏱️ Delivery: 3-7 Days</p>
+                <p><strong>Date:</strong> ${new Date().toLocaleString()}</p>
             `;
             
             if (paymentMethod === 'online') {
-                // Redirect to PhonePe Payment Gateway
-                // In production, integrate actual PhonePe API
-                showNotification('Redirecting to PhonePe Payment Gateway... 💳');
-                
-                // Simulate payment gateway redirect
+                showNotification('Redirecting to PhonePe... 💳');
                 setTimeout(() => {
-                    alert(`🔒 Secure PhonePe Payment Gateway\n\nOrder ID: ${orderId}\nAmount: ₹${total}\n\nYou will be redirected to PhonePe to complete payment.\n\nSupported Methods:\n✓ PhonePe UPI\n✓ All UPI Apps\n✓ Credit/Debit Cards\n✓ Net Banking\n✓ Wallets\n\n[In production, this will redirect to actual PhonePe payment page]`);
-                    
-                    // After successful payment simulation
+                    alert(`🔒 PhonePe Payment\n\nOrder: ${orderId}\nAmount: ₹${total}\n\n[Redirecting to PhonePe gateway...]`);
                     completeOrder(orderId, customerEmail, orderDetails);
                 }, 1500);
             } else {
-                // COD Order
-                alert(`✅ Order Placed Successfully!\n\nOrder ID: ${orderId}\nPayment Method: Cash on Delivery\nTotal Amount: ₹${total}\n\nYour order will be delivered soon. Pay when you receive it!`);
+                alert(`✅ Order Placed!\n\nOrder ID: ${orderId}\nCOD: ₹${total}\n\nPay on delivery!`);
                 completeOrder(orderId, customerEmail, orderDetails);
             }
         });
 
         async function completeOrder(orderId, customerEmail, orderDetails) {
-            // Send email notification to seller
             try {
                 await Email.send({
                     SecureToken: "YOUR_SMTP_TOKEN",
                     To: 'rb4120204@gmail.com',
                     From: 'orders@velvo.in',
-                    Subject: `New Velvo Order ${orderId} - ₹${cart.reduce((sum, item) => sum + (item.newPrice * item.quantity), 0)}`,
+                    Subject: `New Order ${orderId}`,
                     Body: orderDetails
                 });
             } catch (error) {
-                console.log('Email notification will be sent');
+                console.log('Email notification pending');
             }
             
             cart = [];
             saveCart();
             updateCartCount();
             closeCheckout();
-            showNotification('Order placed successfully! 🎉');
+            showNotification('Order placed! 🎉');
         }
 
         function showNotification(message) {
