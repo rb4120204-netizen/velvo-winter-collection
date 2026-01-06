@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvo - Winter Sale 20% OFF | Premium Clothing Brand</title>
+    <meta name="description" content="Velvo Premium Winter Collection 2026 - Get 20% OFF on all items. Shop for Men, Women, Kids & Seniors.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #1a1a1a;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #d4af37;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 100px 20px 50px;
+        }
+        
+        .sale-badge {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #1a1a1a;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: inline-block;
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin: 1rem 0;
+            font-weight: 700;
+        }
+        
+        .discount {
+            font-size: 6rem;
+            color: #d4af37;
+            font-weight: 700;
+            margin: 20px 0;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: #e0e0e0;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #1a1a1a;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+        }
+        
+        .sale-banner {
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
+            color: #fff;
+            padding: 35px 20px;
+            text-align: center;
+        }
+        
+        .sale-banner h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .products {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+        
+        .products h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+        }
+        
+        .tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #dc143c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+        
+        .card h3 {
+            padding: 25px 25px 10px;
+            font-size: 1.4rem;
+            color: #1a1a1a;
+        }
+        
+        .category {
+            padding: 0 25px;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            padding: 0 25px 25px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .price s {
+            color: #999;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .price b {
+            color: #dc143c;
+        }
+        
+        .franchise {
+            padding: 100px 20px;
+            text-align: center;
+            background: #fff;
+        }
+        
+        .franchise h2 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+        
+        .franchise-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .map {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin: 2rem 0;
+        }
+        
+        .franchise p {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 3rem auto;
+            text-align: left;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .feature h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        footer p {
+            margin: 10px 0;
+            color: #999;
+        }
+        
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .discount {
+                font-size: 4rem;
+            }
+            
+            .products h2, .franchise h2 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T06-50-31-224Z-727dc112-chat-image-1767682231204-0.jpg" alt="Velvo Logo" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#franchise">Franchise</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div>
+            <div class="sale-badge">🎉 WINTER SALE 🎉</div>
+            <h1>Premium Winter Collection</h1>
+            <h2 class="discount">20% OFF</h2>
+            <p>Shop for Everyone - Men, Women, Kids & Seniors</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="sale-banner">
+        <h2>❄️ WINTER SALE - 20% OFF ALL ITEMS ❄️</h2>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Winter Collection 2026</h2>
+        <p class="subtitle">Premium Quality Clothing for Everyone</p>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-02-42-598Z-a397b3ae-nano-banana-pro_1767682962439.jpg" alt="Men's Hoodie">
+                <h3>Premium Men's Hoodie</h3>
+                <p class="category">Men's Collection</p>
+                <p class="price"><s>₹2,499</s> <b>₹1,999</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-05-481Z-425445ab-nano-banana-pro_1767682985093.jpg" alt="Women's Jacket">
+                <h3>Elegant Women's Jacket</h3>
+                <p class="category">Women's Collection</p>
+                <p class="price"><s>₹3,999</s> <b>₹3,199</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-31-495Z-831b5679-nano-banana-pro_1767683011125.png" alt="Kids Tracksuit">
+                <h3>Kids' Tracksuit</h3>
+                <p class="category">Kids Collection</p>
+                <p class="price"><s>₹1,799</s> <b>₹1,439</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-03-53-043Z-52953e70-nano-banana-pro_1767683032856.png" alt="Premium Cap">
+                <h3>Premium Cap</h3>
+                <p class="category">Accessories</p>
+                <p class="price"><s>₹799</s> <b>₹639</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-10-063Z-0bfa0376-nano-banana-pro_1767683049924.jpg" alt="Men's Muffler">
+                <h3>Men's Wool Muffler</h3>
+                <p class="category">Men's Accessories</p>
+                <p class="price"><s>₹1,299</s> <b>₹1,039</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-29-346Z-e31497dd-nano-banana-pro_1767683069169.png" alt="Premium Socks">
+                <h3>Premium Socks Collection</h3>
+                <p class="category">Accessories</p>
+                <p class="price"><s>₹499</s> <b>₹399</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-04-46-587Z-5d40b766-nano-banana-pro_1767683086235.jpg" alt="Teen Girls Jacket">
+                <h3>Teen Girls' Puffer Jacket</h3>
+                <p class="category">Girls Collection</p>
+                <p class="price"><s>₹2,999</s> <b>₹2,399</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-04-127Z-339f1fd3-nano-banana-pro_1767683103956.jpg" alt="Women's Sweater">
+                <h3>Premium Knit Sweater</h3>
+                <p class="category">Senior Women's Collection</p>
+                <p class="price"><s>₹2,499</s> <b>₹1,999</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-29-272Z-b9e493e6-nano-banana-pro_1767683129089.png" alt="Senior Men's Muffler">
+                <h3>Classic Wool Muffler</h3>
+                <p class="category">Senior Men's Collection</p>
+                <p class="price"><s>₹1,499</s> <b>₹1,199</b></p>
+            </div>
+
+            <div class="card">
+                <span class="tag">20% OFF</span>
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T07-05-45-459Z-8f5a7919-nano-banana-pro_1767683145224.jpg" alt="Women's Scarf">
+                <h3>Elegant Women's Scarf</h3>
+                <p class="category">Women's Accessories</p>
+                <p class="price"><s>₹1,799</s> <b>₹1,439</b></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="franchise" class="franchise">
+        <h2>Franchise Opportunities</h2>
+        <div class="franchise-content">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T05-44-49-222Z-ff30b569-nano-banana-pro_1767678288873.png" alt="Velvo Franchise Map" class="map">
+            <p>50+ Stores Nationwide | Join Our Growing Family</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h4>✓ Established Brand</h4>
+                    <p>Recognized across India with 50+ stores</p>
+                </div>
+                <div class="feature">
+                    <h4>✓ Full Support</h4>
+                    <p>Training, marketing & operational guidance</p>
+                </div>
+                <div class="feature">
+                    <h4>✓ Premium Products</h4>
+                    <p>High-quality clothing for all age groups</p>
+                </div>
+                <div class="feature">
+                    <h4>✓ Proven Success</h4>
+                    <p>Profitable business model nationwide</p>
+                </div>
+            </div>
+            
+            <a href="mailto:franchise@velvo.in" class="btn">Inquire Now</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/9ae33c23-6387-4f04-8593-accc07345d02/2026-01-06T06-50-31-224Z-727dc112-chat-image-1767682231204-0.jpg" alt="Velvo Logo" style="height: 60px; margin-bottom: 20px;">
+        <p><strong>Velvo Fashion Pvt. Ltd.</strong></p>
+        <p>📧 Email: <a href="mailto:franchise@velvo.in">franchise@velvo.in</a> | <a href="mailto:support@velvo.in">support@velvo.in</a></p>
+        <p>📱 Phone: +91 98765 43210</p>
+        <p>📍 Head Office: Mumbai, Maharashtra, India</p>
+        <p style="margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">© 2026 Velvo Fashion Pvt. Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
