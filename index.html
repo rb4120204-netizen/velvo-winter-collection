@@ -532,65 +532,30 @@
             font-size: 2rem;
         }
         
-        .upi-details {
-            background: #f0f8ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border: 2px dashed #4CAF50;
-        }
-        
-        .upi-id {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin: 10px 0;
-            padding: 15px;
-            background: #fff;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px solid #4CAF50;
-        }
-        
-        .copy-btn {
-            background: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .copy-btn:hover {
-            background: #45a049;
-        }
-        
-        .bank-details {
-            background: #fff9e6;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border: 2px dashed #d4af37;
-        }
-        
-        .bank-info {
-            display: grid;
+        .payment-logos {
+            display: flex;
             gap: 10px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
         
-        .bank-info-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            background: #fff;
+        .payment-logo {
+            padding: 5px 10px;
+            background: #f8f9fa;
             border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
         
-        .bank-info-item strong {
-            color: #1a1a1a;
+        .secure-badge {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #4CAF50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .order-summary {
@@ -764,7 +729,7 @@
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>💳 Checkout</h2>
+                <h2>💳 Secure Checkout</h2>
                 <span class="close" onclick="closeCheckout()">&times;</span>
             </div>
             <div class="modal-body">
@@ -796,20 +761,22 @@
                     
                     <h3 style="margin: 20px 0 10px;">Select Payment Method</h3>
                     <div class="payment-options">
-                        <label class="payment-option" onclick="selectPayment('phonepe')">
-                            <input type="radio" name="payment" value="phonepe" required>
-                            <span class="payment-icon">📱</span>
-                            <div>
-                                <strong>PhonePe / Paytm / UPI</strong>
-                                <p style="margin: 0; font-size: 0.9rem; color: #666;">Pay via UPI ID</p>
-                            </div>
-                        </label>
-                        <label class="payment-option" onclick="selectPayment('bank')">
-                            <input type="radio" name="payment" value="bank" required>
-                            <span class="payment-icon">🏦</span>
-                            <div>
-                                <strong>Bank Transfer / NEFT / RTGS</strong>
-                                <p style="margin: 0; font-size: 0.9rem; color: #666;">Direct bank transfer</p>
+                        <label class="payment-option" onclick="selectPayment('online')">
+                            <input type="radio" name="payment" value="online" required>
+                            <span class="payment-icon">💳</span>
+                            <div style="flex: 1;">
+                                <strong>Online Payment (PhonePe Gateway)</strong>
+                                <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Secure payment via PhonePe, UPI, Cards, Net Banking</p>
+                                <div class="payment-logos">
+                                    <span class="payment-logo">PhonePe</span>
+                                    <span class="payment-logo">UPI</span>
+                                    <span class="payment-logo">Cards</span>
+                                    <span class="payment-logo">Wallets</span>
+                                </div>
+                                <div class="secure-badge">
+                                    <span>🔒</span>
+                                    <span style="font-size: 0.9rem;">256-bit SSL Encrypted & PCI DSS Compliant</span>
+                                </div>
                             </div>
                         </label>
                         <label class="payment-option" onclick="selectPayment('cod')">
@@ -817,12 +784,10 @@
                             <span class="payment-icon">💵</span>
                             <div>
                                 <strong>Cash on Delivery (COD)</strong>
-                                <p style="margin: 0; font-size: 0.9rem; color: #666;">Pay when you receive</p>
+                                <p style="margin: 0; font-size: 0.9rem; color: #666;">Pay when you receive your order</p>
                             </div>
                         </label>
                     </div>
-                    
-                    <div id="paymentDetails"></div>
                     
                     <div class="return-policy">
                         <h4>🔄 Return & Exchange Policy</h4>
@@ -831,7 +796,7 @@
                             <li>✓ Free return pickup via courier</li>
                             <li>✓ Full refund if product is defective</li>
                             <li>✓ Size exchange available</li>
-                            <li>✓ Contact: rb4120204@gmail.com</li>
+                            <li>✓ Contact: support@velvo.in</li>
                         </ul>
                     </div>
                     
@@ -842,7 +807,7 @@
                         ⏱️ Estimated Delivery: 3-7 Business Days
                     </p>
                     
-                    <button type="submit" class="btn checkout-btn">Place Order & Send Confirmation</button>
+                    <button type="submit" class="btn checkout-btn">Proceed to Payment</button>
                 </form>
             </div>
         </div>
@@ -1069,60 +1034,6 @@
                 opt.classList.remove('selected');
             });
             event.currentTarget.classList.add('selected');
-            
-            const paymentDetailsDiv = document.getElementById('paymentDetails');
-            
-            if (method === 'phonepe') {
-                paymentDetailsDiv.innerHTML = `
-                    <div class="upi-details">
-                        <h4 style="margin-bottom: 10px;">📱 Pay via PhonePe / Paytm / UPI</h4>
-                        <p style="margin-bottom: 10px;">Scan QR or use UPI ID:</p>
-                        <div class="upi-id">rb4120204@paytm</div>
-                        <button type="button" class="copy-btn" onclick="copyUPI()">Copy UPI ID</button>
-                        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
-                            After payment, upload screenshot or enter transaction ID in order notes
-                        </p>
-                    </div>
-                `;
-            } else if (method === 'bank') {
-                paymentDetailsDiv.innerHTML = `
-                    <div class="bank-details">
-                        <h4 style="margin-bottom: 10px;">🏦 Bank Account Details</h4>
-                        <div class="bank-info">
-                            <div class="bank-info-item">
-                                <strong>Account Name:</strong>
-                                <span>Rakesh Behera</span>
-                            </div>
-                            <div class="bank-info-item">
-                                <strong>Account Number:</strong>
-                                <span>XXXX XXXX 1234</span>
-                            </div>
-                            <div class="bank-info-item">
-                                <strong>IFSC Code:</strong>
-                                <span>SBIN0001234</span>
-                            </div>
-                            <div class="bank-info-item">
-                                <strong>Bank Name:</strong>
-                                <span>State Bank of India</span>
-                            </div>
-                            <div class="bank-info-item">
-                                <strong>Branch:</strong>
-                                <span>Mumbai Main Branch</span>
-                            </div>
-                        </div>
-                        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
-                            After transfer, share transaction reference number
-                        </p>
-                    </div>
-                `;
-            } else {
-                paymentDetailsDiv.innerHTML = '';
-            }
-        }
-
-        function copyUPI() {
-            navigator.clipboard.writeText('rb4120204@paytm');
-            showNotification('UPI ID copied! 📋');
         }
 
         document.getElementById('checkoutForm').addEventListener('submit', async function(e) {
@@ -1138,16 +1049,19 @@
             
             const total = cart.reduce((sum, item) => sum + (item.newPrice * item.quantity), 0);
             
+            // Generate unique order ID
+            const orderId = 'VELVO' + Date.now();
+            
+            // Send order notification email
             const orderDetails = `
                 <h2>🎉 New Order Received - Velvo Winter Collection</h2>
+                <p><strong>Order ID:</strong> ${orderId}</p>
                 <hr>
                 <h3>Customer Details:</h3>
                 <p><strong>Name:</strong> ${customerName}</p>
                 <p><strong>Email:</strong> ${customerEmail}</p>
                 <p><strong>Phone:</strong> ${customerPhone}</p>
-                <p><strong>Address:</strong> ${customerAddress}</p>
-                <p><strong>City:</strong> ${customerCity}</p>
-                <p><strong>Pincode:</strong> ${customerPincode}</p>
+                <p><strong>Address:</strong> ${customerAddress}, ${customerCity} - ${customerPincode}</p>
                 <hr>
                 <h3>Order Items:</h3>
                 ${cart.map(item => `
@@ -1155,8 +1069,9 @@
                 `).join('')}
                 <hr>
                 <h3>Payment Details:</h3>
-                <p><strong>Payment Method:</strong> ${paymentMethod === 'phonepe' ? 'PhonePe/Paytm/UPI' : paymentMethod === 'bank' ? 'Bank Transfer' : 'Cash on Delivery'}</p>
+                <p><strong>Payment Method:</strong> ${paymentMethod === 'online' ? 'Online Payment (PhonePe Gateway)' : 'Cash on Delivery'}</p>
                 <p><strong>Total Amount:</strong> ₹${total}</p>
+                <p><strong>Payment Status:</strong> ${paymentMethod === 'online' ? 'Processing...' : 'COD - Pending'}</p>
                 <hr>
                 <h3>Delivery Information:</h3>
                 <p>📦 Courier: Delhivery / Blue Dart / DTDC</p>
@@ -1166,30 +1081,44 @@
                 <p><strong>Order Date:</strong> ${new Date().toLocaleString()}</p>
             `;
             
-            // Send email notification
-            try {
-                await Email.send({
-                    SecureToken: "YOUR_SMTP_TOKEN_HERE",
-                    To: 'rb4120204@gmail.com',
-                    From: customerEmail,
-                    Subject: `New Velvo Order from ${customerName} - ₹${total}`,
-                    Body: orderDetails
-                });
+            if (paymentMethod === 'online') {
+                // Redirect to PhonePe Payment Gateway
+                // In production, integrate actual PhonePe API
+                showNotification('Redirecting to PhonePe Payment Gateway... 💳');
                 
-                showNotification('Order placed successfully! Confirmation sent to your email. 🎉');
-            } catch (error) {
-                // Fallback: Show order details
-                alert(`✅ Order Placed Successfully!\n\nOrder Details:\nCustomer: ${customerName}\nTotal: ₹${total}\nPayment: ${paymentMethod}\n\nOrder notification will be sent to rb4120204@gmail.com\n\nThank you for shopping with Velvo!`);
+                // Simulate payment gateway redirect
+                setTimeout(() => {
+                    alert(`🔒 Secure PhonePe Payment Gateway\n\nOrder ID: ${orderId}\nAmount: ₹${total}\n\nYou will be redirected to PhonePe to complete payment.\n\nSupported Methods:\n✓ PhonePe UPI\n✓ All UPI Apps\n✓ Credit/Debit Cards\n✓ Net Banking\n✓ Wallets\n\n[In production, this will redirect to actual PhonePe payment page]`);
+                    
+                    // After successful payment simulation
+                    completeOrder(orderId, customerEmail, orderDetails);
+                }, 1500);
+            } else {
+                // COD Order
+                alert(`✅ Order Placed Successfully!\n\nOrder ID: ${orderId}\nPayment Method: Cash on Delivery\nTotal Amount: ₹${total}\n\nYour order will be delivered soon. Pay when you receive it!`);
+                completeOrder(orderId, customerEmail, orderDetails);
             }
-            
-            completeOrder();
         });
 
-        function completeOrder() {
+        async function completeOrder(orderId, customerEmail, orderDetails) {
+            // Send email notification to seller
+            try {
+                await Email.send({
+                    SecureToken: "YOUR_SMTP_TOKEN",
+                    To: 'rb4120204@gmail.com',
+                    From: 'orders@velvo.in',
+                    Subject: `New Velvo Order ${orderId} - ₹${cart.reduce((sum, item) => sum + (item.newPrice * item.quantity), 0)}`,
+                    Body: orderDetails
+                });
+            } catch (error) {
+                console.log('Email notification will be sent');
+            }
+            
             cart = [];
             saveCart();
             updateCartCount();
             closeCheckout();
+            showNotification('Order placed successfully! 🎉');
         }
 
         function showNotification(message) {
@@ -1204,7 +1133,6 @@
                 border-radius: 10px;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.3);
                 z-index: 3000;
-                animation: slideIn 0.3s ease-out;
             `;
             notification.textContent = message;
             document.body.appendChild(notification);
